@@ -1,6 +1,7 @@
 from django.db import models
 
-from .models import Teacher 
+# from .models import Teacher 
+from .models import Teacher
 
 from .models import Student
 
@@ -15,7 +16,7 @@ class Class(models.Model):
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     students = models.ManyToManyField(Student, blank=True)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    room_name = models.CharField(max_length=10)
+    room_number = models.CharField(max_length=10)
     schedule = models.TextField()
     start_time = models.TimeField()
     end_time = models.TimeField()
